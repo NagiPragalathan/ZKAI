@@ -1,0 +1,5 @@
+base/resources/labeled_data.csv
+/saved_images
+/generated
+base/yolov3.weights
+base/yolov3.weights3zx_aks4.tmp

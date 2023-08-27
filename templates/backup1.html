@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+<head>
+   <meta charset- "UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>chart.js</title>
+</head>
+<body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/helpers.esm.min.js"></script>
+   <canvas id="graph" aria - label="chart" height="350" width="580"></canvas>
+   <script>
+      var chrt = document.getElementById("graph");
+      let head_data = {{ head_data|safe }}
+      let dataset_data = {{ dataset_data|safe }}
+      console.log(head_data)
+      var graph = new Chart(chrt, {
+         type: 'bar',
+         data: {
+            labels: head_data,
+            datasets: [{
+               label: "Emotion",
+               data: dataset_data,
+            }],
+         },
+         options: {
+            responsive: true,
+         },
+      });
+   </script>
+</body>
+</html>
