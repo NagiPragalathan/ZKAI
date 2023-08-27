@@ -113,6 +113,26 @@
       padding: 10px;
       overflow: scroll;
     }
+    .btns{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+      gap: 84px;
+      flex-direction: row;
+      margin-top: 32px;
+      margin-bottom: 63px;
+
+    }
+    .compiler{
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0bbec2;
+      color: rgb(255, 255, 255);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -195,8 +215,14 @@
       </tbody>
     </table>
   </div>
-  <button id="download">Download PDF</button>
+  <div class="btns">
+    <button id="download">Download PDF</button>
+    <button class="compiler" onclick="redirect_fun()">Take a Codeing Test</button>
+  </div>
   <script>
+    function redirect_fun(){
+      window.location.href = "{% url 'compiler' %}";
+    }
     var chrt = document.getElementById("graph");
     let head_data = {{ head_data|safe }}
     let dataset_data = {{ dataset_data|safe }}

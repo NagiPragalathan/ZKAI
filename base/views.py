@@ -179,7 +179,7 @@ def report(request,total_question,total_mark):
             correct_incorrect_flags.append(correct_incorrect_flag)
     # with open(file_path, 'w') as f:
     #     f.write("")
-
+    # print("Text Deleted")
     # print(converstations_datas)
     # Count the occurrences of each unique value for sentiment and correct/incorrect flags
     sentiment_counter = Counter(sentiments)
