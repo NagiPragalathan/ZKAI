@@ -14,10 +14,11 @@ from .Ai_Modules.QA import generate_question
 import json
 from collections import Counter
 
-
 def home(request):
-    render(request,"Home.html")
-time_limit = 50 
+    return render(request,"Home.html")
+
+
+time_limit = 10 
 last_screenshot_time = 0
 audio_process = True
 old_image = None
@@ -135,14 +136,17 @@ def video_feed(request):
     cap = cv2.VideoCapture(0)
     return StreamingHttpResponse(gen(cap), content_type="multipart/x-mixed-replace;boundary=frame")
 
+
 def Test_home(request):
     print("generating question")
+    # questions_json = json.dumps(generate_question("what is java"))
     questions_json = json.dumps(generate_question("what is java"))
     context = {'questions_json': questions_json}
     print(context)
     return render(request,"index.html",context)
 
 def report(request,total_question,total_mark):
+    print(total_question,total_mark)
     total_marks = 100 * total_mark / total_question
     average_percentage = round((total_marks - 500)/499*100,3)
     base_save_path = os.path.join(settings.BASE_DIR, 'base', 'generated_files')
@@ -176,7 +180,7 @@ def report(request,total_question,total_mark):
     # with open(file_path, 'w') as f:
     #     f.write("")
 
-    print(converstations_datas)
+    # print(converstations_datas)
     # Count the occurrences of each unique value for sentiment and correct/incorrect flags
     sentiment_counter = Counter(sentiments)
     correct_incorrect_counter = Counter(correct_incorrect_flags)
@@ -214,11 +218,10 @@ def report(request,total_question,total_mark):
             head.append(i[-2])
             dataset.append(Action.count(i[-2]))
         time.append(i[0])
-        print(i[-1],type(i[-1]))
         voice_act.append(0 if i[-1] == "False" else 1)
 
     
-    print(voice_act,time)
+    # print(voice_act,time)
     # print(sentiment_counter,list(sentiment_counter.items()),correct_incorrect_counter,highest_sentiment,highest_correct_incorrect,highest_sentiment)
     context = {"converstation":converstations_datas,
                "highest_sentiment":highest_sentiment, 
@@ -231,7 +234,7 @@ def report(request,total_question,total_mark):
                "total_mark":total_mark,
                
                "circle_label":["Questions","Total Mark"],
-               "circle_data":[total_question-total_mark,total_mark],
+               "circle_data":[abs(total_question-total_mark),total_mark],
                
                "head_data":head,
                "dataset_data":dataset,

@@ -57,11 +57,10 @@
      // Initialize timer variables
     let timeLeft = 30; // 2 minutes
     const timerElement = document.getElementById("time-left");
-
     // Function to update timer display
     function updateTimerDisplay() {
-      timerElement.innerText = timeLeft;
-    }
+  timerContainer.innerText = `Time Left: ${timeLeft}s`;
+}
     {% autoescape off %}  // Turn off HTML escaping
     // Parse the JSON string to a JavaScriNpt object
     const questionsJSON = "{{ questions_json|safe|escapejs }}";
@@ -98,47 +97,42 @@
           optionButton.addEventListener("click", () => checkAnswer(optionButton, question.answer));
           questionDiv.appendChild(optionButton);
         });
-  
+        Array.from(quizContainer.querySelectorAll("button")).forEach((button) => {
+    button.classList.remove("correct", "wrong");
+  });
         quizContainer.appendChild(questionDiv);
       } else {
         const userConfirmed = window.confirm("Are you sure you want to Submit this quiz?");
         if (userConfirmed) {
           // If user confirms, redirect to another URL
-          window.location.href = "{% url 'home' %}";
+          window.location.href = `report/${questions.length}/${correctAnswers}`;
         }
       }
     }
   
-    // Function to check the answer
     function checkAnswer(button, correctAnswer) {
-      if (button.innerText === correctAnswer) {
-        correctAnswers++;
-        correctCountContainer.innerText = `Correct Answers: ${correctAnswers}`;
-      } else {
-        wrongAnswers++;
-        wrongCountContainer.innerText = `Wrong Answers: ${wrongAnswers}`;
-      }
-  
-      // Move to the next question
-      currentQuestionIndex++;
-      displayQuestion();
-    }
-  
-    // Display the first question
+  if (button.innerText === correctAnswer) {
+    correctAnswers++;
+    correctCountContainer.innerText = `Correct Answers: ${correctAnswers}`;
+    button.classList.add("correct");
+  } else {
+    wrongAnswers++;
+    wrongCountContainer.innerText = `Wrong Answers: ${wrongAnswers}`;
+    button.classList.add("wrong");
+  }
+
+  // Move to the next question
+  setTimeout(() => {
+    currentQuestionIndex++;
     displayQuestion();
-    // Function to handle timer countdown
-    function countdownTimer() {
-      if (timeLeft <= 0) {
-        clearInterval(timerInterval);
-        // Redirect to another URL when time is up
-        window.location.href = "https://example.com/time-up";
-      } else {
-        timeLeft--;
-        updateTimerDisplay();
-      }
-    }
-    // Start timer countdown
-  const timerInterval = setInterval(countdownTimer, 1000);
+  }, 1000);
+}
+
+// Start the countdown timer
+timerInterval = setInterval(countdownTimer, 1000);
+
+// Display the first question
+displayQuestion();
 
 
   </script>

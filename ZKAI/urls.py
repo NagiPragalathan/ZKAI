@@ -9,6 +9,7 @@ from ZKAI import settings
 from base.views import video_feed,home,Test_home,report
 urlpatterns = [
     path('video_feed', video_feed, name='video_feed'),
+    path('', home, name='home'),
     path('home', home, name='home'),
     path('test_home', Test_home, name='test_home'),
     # path('show_images', show_images, name='show_images'),

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
 <head>
   <meta charset="UTF-8">
   <title>ZKConnect</title>
@@ -9,7 +10,6 @@
     }
     header {
       position: absolute;
-      width: 100%;
       display: flex;
       justify-content: space-between;
       padding: 16px;
@@ -50,21 +50,53 @@
       padding: 20px 35px;
       font-size: 22px;
     }
+    header a{
+      color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    align-content: center;
+    text-decoration: none;
+    font-weight: 900;
+    }
+    .cam{
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    margin-top: 33px;
+    flex-direction: row;
+}
+.cam img{
+  
+    position: absolute;
+    background: aliceblue;
+    right: 3%;
+    overflow: hidden;
+    width: 13%;
+    margin-top: 5%;
+    border-radius: 22px;
+    height: 160%;
+
+}
   </style>
 </head>
 <body style="background-color: black; color: white;">
   <!-- Navbar -->
   <header>
     <a href="#">
-      <img src="logo.png" alt="Logo" height="64">
+      <img src="{% static 'img/logo.png' %}" alt="Logo" height="64">
       ZKConnect
     </a>
-
   </header>
-
   <!-- Main Content -->
   <div class="instruction">
-    <h1 class="text-center" style="color: #CA00EB;">Instruction</h1>
+    <div class="cam">
+      <h1 class="text-center" style="color: #CA00EB;">Instruction</h1>
+      <img src="{% url 'video_feed' %}" alt="Logo" height="64">
+    </div>
     <h2>1. Please note that this test is AI-moderated to ensure fairness and accuracy.</h2>
     <h2>2. Please note that this test is AI-moderated to ensure fairness and accuracy.</h2>
     <h2>3. Your results will be analyzed by our AI, and the report will guide the next steps in the hiring process.</h2>
@@ -75,7 +107,12 @@
   </div>
   
   <div class="text-center">
-    <button class="button-main">Write Test Now</button>
+    <button class="button-main" onclick="redirct_page()">Write Test Now</button>
   </div>
 </body>
+<script>
+  function redirct_page(){
+    window.location.href = "{% url 'test_home' %}";
+  }
+</script>
 </html>

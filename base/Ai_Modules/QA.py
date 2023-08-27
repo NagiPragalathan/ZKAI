@@ -6,6 +6,7 @@ from .Content_gen import respond_to_input
 import random
 import nltk
 from nltk.corpus import wordnet as wn
+from ..resources.content import data
 
 
 def clean_text(text):
@@ -158,7 +159,8 @@ def generate_mcq(text, num_questions=5):
 
 
 def generate_question(keyword):
-    content = clean_text(respond_to_input(keyword))
+    # content = clean_text(respond_to_input(keyword))
+    content = clean_text(data)
     mcq_generator = MCQTest(content, 10)
     mcq_generator1 = generate_mcq(content, 10)
     questions = mcq_generator.generate_test()

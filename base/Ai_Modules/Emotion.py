@@ -61,5 +61,3 @@ def find_unwanted_words_bool(text):
             bool_word = True
             found_unwanted_words.append(word)
     return bool_word
-
-print(find_unwanted_words("unwanted is fuck negative"))

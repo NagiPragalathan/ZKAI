@@ -21,3 +21,54 @@
 [2023-08-27 09:21:41],  what is this, Normal, False
 [2023-08-27 09:21:42],  what is this Rao, Normal, False
 [2023-08-27 09:21:42],  Tata, Normal, False
+[2023-08-27 11:56:54],  India, Normal, False
+[2023-08-27 11:57:01],  play, Normal, False
+[2023-08-27 11:58:50],  it's not like a skill based, Normal, False
+[2023-08-27 11:58:53],  it's not like this, Normal, False
+[2023-08-27 11:58:54],  hey if you get the, Normal, False
+[2023-08-27 11:58:55],  it's not like a skill based, Normal, False
+[2023-08-27 11:58:57],  if you get the English accountant, Normal, False
+[2023-08-27 11:58:58],  hey if you get the English, Normal, False
+[2023-08-27 12:32:21],  Saturday, Normal, False
+[2023-08-27 12:32:22],  Sarkari, Normal, False
+[2023-08-27 12:46:39],  Solanki, Normal, False
+[2023-08-27 12:46:49],  Samsung, Normal, False
+[2023-08-27 12:46:54],  Samsung, Normal, False
+[2023-08-27 12:46:56],  Samsung, Normal, False
+[2023-08-27 12:47:17],  Hero, Normal, False
+[2023-08-27 12:47:20],  Europe, Normal, False
+[2023-08-27 12:47:25],  Election Commission, Normal, False
+[2023-08-27 12:47:25],  Election Commission, Normal, False
+[2023-08-27 12:47:26],  Election Commission, Normal, False
+[2023-08-27 12:47:27],  Election Commission, Normal, False
+[2023-08-27 12:47:48],  Anjana, Normal, False
+[2023-08-27 12:47:53],  Babi run rate of, Normal, False
+[2023-08-27 12:48:02],  starting character, Pessimistic, False
+[2023-08-27 12:48:33],  late on trailer, Discouraged, False
+[2023-08-27 12:48:35],  late on trailer, Disappointed, False
+[2023-08-27 12:48:36],  late on trailer, Sad, False
+[2023-08-27 12:48:37],  camera, Normal, False
+[2023-08-27 12:48:38],  camera, Normal, False
+[2023-08-27 12:48:39],  light area, Satisfied, False
+[2023-08-27 12:48:41],  light area, Satisfied, False
+[2023-08-27 12:48:59],  Apne, Normal, False
+[2023-08-27 12:49:04],  ne, Normal, False
+[2023-08-27 12:49:09],  English, Normal, False
+[2023-08-27 12:49:48],  varala video songs, Normal, False
+[2023-08-27 12:49:51],  Bareilly video, Normal, False
+[2023-08-27 12:49:52],  different timing, Sad, False
+[2023-08-27 12:49:56],  different timing, Sad, False
+[2023-08-27 12:50:26],  what is man, Normal, False
+[2023-08-27 12:50:29],  22 21, Normal, False
+[2023-08-27 12:50:29],  what is man, Normal, False
+[2023-08-27 12:50:30],  what is man, Normal, False
+[2023-08-27 12:50:31],  what is man, Normal, False
+[2023-08-27 12:50:31],  what is man, Normal, False
+[2023-08-27 12:50:41],  3646, Normal, False
+[2023-08-27 12:50:43],  3646, Normal, False
+[2023-08-27 12:50:46],  Bharat ke report, Normal, False
+[2023-08-27 12:50:49],  report report, Normal, False
+[2023-08-27 12:55:58],  questions back and underground, Normal, False
+[2023-08-27 12:55:59],  questions back and another account, Normal, False
+[2023-08-27 12:56:00],  questions back and another, Normal, False
+[2023-08-27 12:56:01],  questions back and another, Normal, False
